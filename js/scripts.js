@@ -89,14 +89,19 @@ $(document).ready(function() {
         $('.main-btn').removeClass('active')
         $(this).addClass('active')
 
-        if(type == 'dsg-btn') {
-            eachBoxes('dsg',boxes)
-        } else if (type == 'dev-btn') {
-            eachBoxes('dev',boxes)
-        } else if (type == 'seo-btn') {
-            eachBoxes('seo',boxes)
-        } else if (type == 'all-btn') {
-            eachBoxes('all',boxes)
+        switch(type) {
+            case("dsg-btn"):
+                eachBoxes('dsg',boxes)
+                break
+            case("dev-btn"):
+                eachBoxes('dev',boxes)
+                break
+            case("seo-btn"):
+                eachBoxes('seo',boxes)
+                break
+            case("all-btn"):
+                eachBoxes('all',boxes)
+                break
         }
      })
     function eachBoxes(type,boxes) {
@@ -128,18 +133,24 @@ $(document).ready(function() {
     $(navBtn).click(function() {
         let btnId = $(this).attr('id')
         
-        if (btnId == 'about-menu') {
-            scrollTo = aboutSection
-        } else if (btnId == 'services-menu') {
-            scrollTo = servicesSection
-        } else if (btnId == 'team-menu') {
-            scrollTo = teamSection
-        } else if (btnId == 'portfolio-menu') {
-            scrollTo = portfolioSection
-        } else if (btnId == 'contact-menu') {
-            scrollTo = contactSection
-        } else {
-            scrollTo = bannerSection
+        switch(btnId) {
+            case("about-menu"):
+                scrollTo = aboutSection
+                break
+            case("services-menu"):
+                scrollTo = servicesSection
+                break
+            case("team-menu"):
+                scrollTo = teamSection
+                break
+            case("portfolio-menu"):
+                scrollTo = portfolioSection
+                break
+            case("contact-menu"):
+                scrollTo = contactSection
+                break
+            default:
+                scrollTo = bannerSection
         }
 
         // Scroll Animation(ATENCAOcoloca dentro da function)
